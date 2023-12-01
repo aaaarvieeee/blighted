@@ -23,19 +23,19 @@ export default function DesignList({ designs }) {
                     <option value="size">Size</option>
                 </select>
             </div>
-            <div className="design-list">
-                <ul>
+            <div>
+                <div className="design-list grid grid-cols-4 gap-4">
                     {designList.map((design) => (
-                        <li key={design.id}>
+                        <div key={design.id}>
                             <DesignCard 
                                 name={design.name}
                                 size={design.size}
                                 image={design.image}
                                 price={design.price}
                             />
-                        </li>
+                        </div>
                     ))}
-                </ul>
+                </div>
             </div>
         </div>
     )

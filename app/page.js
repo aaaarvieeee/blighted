@@ -5,13 +5,13 @@ import Lucifer from '../public/Painting-of-Lucifer.jpg'
 
 export default function Home() {
   return (
-    <main className='bg-white min-h-screen'>
+    <>
       {/* main content */}
         <Layout>
-          
+
           <div className='flex flex-col'>
-            <div>
-              <Image src={Lucifer} className='w-4/6 top-0 right-0 absolute' />
+            <div className=''>
+              <Image src={Lucifer} className='w-5/6 top-0 right-0 absolute' />
             </div>   
 
             <div>
@@ -21,6 +21,6 @@ export default function Home() {
           {/* intro image/slideshow */}
 
         </Layout>
-    </main>
+    </>
   )
 }
