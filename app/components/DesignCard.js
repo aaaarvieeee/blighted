@@ -1,8 +1,9 @@
+import Image from "next/image"
 export default function DesignCard({design}) {
     return (
         <div className="DesignCard cursor-pointer bg-white border-black">
             <div className="image">
-                <img src={design.image} alt={design.title} />
+                <Image src={design.image} alt={design.title} />
             </div>
             <div className="flex flex-col">
                 <ul>

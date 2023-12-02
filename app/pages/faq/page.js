@@ -54,9 +54,9 @@ export default function Faq() {
                 <div>
                     <h2 className='text-black font-black italic text-2xl'>How long have you been tattooing for?</h2>
                     <p className='text-black  italic text-l'>
-                        I actually haven't started tattooing at all! this website is a passion/school project that I do plan to use in the near future. But for now, take some
-                        of the information on this website with a grain of salt (except the aftercare stuff, that's important). But for the time being, I'm cooking in my sketchbooks,
-                        making designs, and eventually will move on to practicing on fake skin. Hope to work with y'all in the future!
+                        I actually haven&lsquo;t started tattooing at all! this website is a passion/school project that I do plan to use in the near future. But for now, take some
+                        of the information on this website with a grain of salt (except the aftercare stuff, that&lsquo;s important). But for the time being, I&lsquo;m cooking in my sketchbooks,
+                        making designs, and eventually will move on to practicing on fake skin. Hope to work with y&lsquo;all in the future!
                     </p>
                 </div>
             </div>

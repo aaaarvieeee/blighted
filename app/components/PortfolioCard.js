@@ -1,8 +1,10 @@
+import Image from "next/image"
+
 export default function Portfolio({art}) {
     return (
         <div className="DesignCard cursor-pointer bg-white border-black">
             <div className="image">
-                <img src={art.image} alt={art.title} />
+                <Image src={art.image} alt={art.title} />
             </div>
             <div className="flex flex-col">
                 <ul>
