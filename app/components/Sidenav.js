@@ -5,7 +5,7 @@ import User from "/public/user.png";
 export default function Sidenav() {
 
     return(
-        <div className="sidenav w-1/6 min-h-screen fixed z-1 top-0 left-0 pt-20 border-r-2 border-black-500 basis-1/6 bg-white">
+        <div className="sidenav w-1/6 min-h-screen fixed z-1 top-0 left-0 pt-20 border-r-2 border-black-200 lg:border-r-2 lg:border-black-500 xl:border-r-7 xl:border-black-600 basis-1/6 bg-white">
 
             <div className="account top-0 right-0 pt-5 pr-5 absolute">
                 <Image src={User} alt="Account Icon" width={30} height={30} />

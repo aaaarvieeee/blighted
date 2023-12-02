@@ -50,6 +50,15 @@ export default function Faq() {
                     <h2 className='text-black font-black italic text-2xl'>How much is the deposit?</h2>
                     <p className='text-black  italic text-l'>The deposit is $100.</p>
                 </div>
+
+                <div>
+                    <h2 className='text-black font-black italic text-2xl'>How long have you been tattooing for?</h2>
+                    <p className='text-black  italic text-l'>
+                        I actually haven't started tattooing at all! this website is a passion/school project that I do plan to use in the near future. But for now, take some
+                        of the information on this website with a grain of salt (except the aftercare stuff, that's important). But for the time being, I'm cooking in my sketchbooks,
+                        making designs, and eventually will move on to practicing on fake skin. Hope to work with y'all in the future!
+                    </p>
+                </div>
             </div>
         </Layout>
     )

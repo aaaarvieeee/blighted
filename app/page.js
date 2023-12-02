@@ -11,14 +11,16 @@ export default function Home() {
 
           <div className='flex flex-col'>
             <div className=''>
-              <Image src={Lucifer} className='w-5/6 top-0 right-0 absolute' />
+              <Image src={Lucifer} className='w-full top-0 right-0 absolute' />
             </div>   
 
             <div>
               {/* <DesignList/> */}
+              <p>
+                
+              </p>
             </div>
           </div>
-          {/* intro image/slideshow */}
 
         </Layout>
     </>
