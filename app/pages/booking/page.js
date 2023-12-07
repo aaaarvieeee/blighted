@@ -7,8 +7,6 @@ import Image from "next/image";
 import instagram from "/public/instagram.png";
 import mail from "/public/mail.png";
 import Map from "../../components/Map";
-import { EmailTemplate } from 'app/components/EmailTemplate';
-import { Resend } from 'resend';
 
 export default function Booking() {
     const emailAddress = "your.email@example.com";
@@ -28,35 +26,19 @@ export default function Booking() {
             console.log('invalid email');
             return;
         }
-        // const res = await fetch('/pages/api', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify({firstName, lastName, email, PhoneNumber, message})
-        // });
+        const res = await fetch('/pages/api', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin':'*',
+                'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'
+            },
+            body: JSON.stringify({firstName, lastName, email, PhoneNumber, message})
+        });
 
-        // if(res.status === 200) {
-        //     alert('Email sent!');
-        // }
-
-        const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
-  
-        try {
-        //   const body = await request.json();
-        //   console.log(body);
-        //   const { firstName, lastName, PhoneNumber, email, message } = body;
-          const data = await resend.emails.send({
-            from: 'blighted <info@blighted.art>',
-            to: email,
-            subject: 'Confirmation Email',
-            react: EmailTemplate({ first: firstName, last: lastName, phone: PhoneNumber, msg: message }),
-          });
-      
-          return Response.json(data);
-        } catch (error) {
-          return Response.json({ error });
-        };
+        if(res.status === 200) {
+            alert('Email sent!');
+        }
     }
 
     return(
