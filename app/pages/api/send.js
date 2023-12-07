@@ -1,3 +1,4 @@
+import { NextResponse } from 'next/server';
 import { EmailTemplate } from 'app/components/EmailTemplate';
 import { Resend } from 'resend';
 
@@ -14,6 +15,10 @@ export async function POST(request) {
       subject: 'Confirmation Email',
       react: EmailTemplate({ firstName, lastName, PhoneNumber, message }),
     });
+    
+    if (data.status === 'success') {
+      return NextResponse.json({ message: 'Email sent!' });
+    }
 
     return Response.json(data);
   } catch (error) {

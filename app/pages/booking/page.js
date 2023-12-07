@@ -26,7 +26,7 @@ export default function Booking() {
             console.log('invalid email');
             return;
         }
-        const res = await fetch('/api/send', {
+        const res = await fetch('/pages/api', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
