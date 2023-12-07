@@ -67,7 +67,7 @@ export default function Booking() {
                     {/* right side */}
                     <div className="flex flex-col border border-black-700 w-1/2 p-5 rounded shadow-lg">
                         <div className="mapHolder">
-                            <h2 className="text-black text-xl font-semibold italic">My Studio's Location:</h2>
+                            <h2 className="text-black text-xl font-semibold italic">My Studio&nbsp;s Location:</h2>
                             <Map/>
                         </div>
                         <div>
