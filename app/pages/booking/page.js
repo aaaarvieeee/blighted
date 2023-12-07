@@ -1,26 +1,33 @@
 // Desc: Booking page
-"use client";
+'use client';
 import Link from "next/link";
 import Layout from "../../components/Layout";
 import {useState} from "react";
 import Image from "next/image";
 import instagram from "/public/instagram.png";
 import mail from "/public/mail.png";
-import Footer from "@/app/components/Footer";
+import Map from "../../components/Map";
 
 export default function Booking() {
     const emailAddress = "your.email@example.com";
     const subject = "Inquiry";
     const body = "Hello, I have a question.";
 
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [PhoneNumber, setPhoneNumber] = useState('');
+    const [message, setMessage] = useState('');
     const [email, setEmail] = useState('');
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    const handleSubmit = () => {
+    const onSubmit = (e) => {
         if (!emailRegex.test(email)) {
-            Alert.alert('Invalid Email', 'Please enter a valid email address');
+            console.log('invalid email');
             return;
         }
+        e.preventDefault();
+        alert('Your message has been sent!');
+        console.log('message:' + firstName + ' ' + lastName + ' ' + PhoneNumber + ' ' + message + ' ' + email);
     }
 
     return(
@@ -34,55 +41,55 @@ export default function Booking() {
                 <div className="flex flex-row">
                     {/* left side */}
                     {/*input boxes*/}
-                    <div className="flex flex-col w-1/2 mr-10">
-
+                    <div className="flex flex-col w-1/2 mr-10 border border-black-700 p-5 rounded shadow-lg ">
                         {/* first name/last name inputs */}
                         <div className="grid grid-cols-2 gap-3 pb-5">
                             <p className="text-black">First Name</p>
                             <p className="text-black">Last Name</p>
-                            <input required type="text"  className="input input-bordered w-full bg-white" />
-                            <input required type="text" className="input input-bordered w-full bg-white" />
+                            <input required type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} className="input input-bordered bg-white text-black" />
+                            <input required type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} className="input input-bordered  bg-white text-black" />
                         </div>
                         
-                        <div className="flex flex-col mr-10">
+                        <div className="flex flex-col mr-10 w-full">
                             <p className="text-black">Email</p>
-                            <input required type="text" value={email} onChangeText={(text) => setEmail(text)} className="input input-bordered bg-white" />
+                            <input required type="text" value={email} onChange={(e) => setEmail(e.target.value)} className="input input-bordered bg-white text-black" />
                             
-                            <p className="text-black">Phone Number</p>
-                            <input required type="text" className="input input-bordered mt-1 bg-white" />
+                            <p className="text-black pt-5">Phone Number</p>
+                            <input required type="text" value={PhoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} className="input input-bordered mt-1 bg-white text-black" />
                             
-                            <p className="text-black">Tattoo Idea and Placement</p>
-                            <textarea required type="text" className="textarea textarea-bordered textarea-md mt-1 bg-white border" />
+                            <p className="text-black pt-5 pb-2">Tattoo Idea and Placement</p>
+                            <textarea required type="text" value={message} onChange={(e) => setMessage(e.target.value)} className="textarea textarea-bordered textarea-md w-full max-w-x bg-white border text-black" />
                             
-                            <button className="btn btn-primary mt-4">Submit</button>
+                            <button onClick={onSubmit} className="btn btn-primary mt-4">Submit</button>
                         </div>
                     </div>
                         
                     {/* right side */}
-                    <div className="flex flex-col">
-                        <h1 className="text-black text-4xl font-semibold italic">Booking Details</h1>
-                        <div className="pt-3">
-                            <ul>
-                                <li className="text-black text-l font-semibold"> When stating your tattoo idea, please include your desired size and your placement.</li>
-                                <li className="text-black text-l font-semibold"></li>
-                                <li className="text-black text-l font-semibold"></li>
-                                <li className="text-black text-l font-semibold"></li>
-                                <li className="text-black text-l font-semibold">If you have any further questions, please refer to the&nbsp;
-                                <Link className="text-black text-l font-semibold hover:underline" href="/pages/faq">FAQ</Link> page or contact me on my socials below!
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="flex flex-row w-full">
-                            <Image src={instagram} alt="Instagram Icon" className="mr-2 h-8 w-8 absolute" />
-                            <Link className="text-black text-2xl font-extrabold hover:underline italic inline pl-9" href={"https://www.instagram.com/6blighted/"}> @6blighted</Link>
+                    <div className="flex flex-col border border-black-700 w-1/2 p-5 rounded shadow-lg">
+                        <div className="mapHolder">
+                            <h2 className="text-black text-xl font-semibold italic">My Studio's Location:</h2>
+                            <Map/>
                         </div>
                         <div>
-                            <Image src={mail} alt="Mail Icon" className="mr-2 h-8 w-8 absolute" />
-                            <Link className="text-black text-2xl font-extrabold hover:underline italic inline pl-9" href={`mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`}> info@blighted.com</Link>
+                            <div className="pt-3">
+                                <ul>
+                                    <li className="text-black text-l font-semibold"> When stating your tattoo idea, please include your desired size and your placement.</li>
+                                    <li className="text-black text-l font-semibold">If you have any further questions, please refer to the&nbsp;
+                                    <Link className="text-black text-l font-semibold hover:underline" href="/pages/faq">FAQ</Link> page or contact me on my socials below!
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="flex flex-row w-full">
+                                <Image src={instagram} alt="Instagram Icon" className="mr-2 h-8 w-8 absolute" />
+                                <Link className="text-black text-2xl font-extrabold hover:underline italic inline pl-9" href={"https://www.instagram.com/6blighted/"}> @6blighted</Link>
+                            </div>
+                            <div>
+                                <Image src={mail} alt="Mail Icon" className="mr-2 h-8 w-8 absolute" />
+                                <Link className="text-black text-2xl font-extrabold hover:underline italic inline pl-9" href={`mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`}> info@blighted.com</Link>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <Footer />
             </div>
         </Layout>
 
