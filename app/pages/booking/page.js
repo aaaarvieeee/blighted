@@ -20,14 +20,24 @@ export default function Booking() {
     const [email, setEmail] = useState('');
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
+        e.preventDefault();
         if (!emailRegex.test(email)) {
             console.log('invalid email');
             return;
         }
-        e.preventDefault();
-        alert('Your message has been sent!');
-        console.log('message:' + firstName + ' ' + lastName + ' ' + PhoneNumber + ' ' + message + ' ' + email);
+        const res = await fetch('/api/send', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({firstName, lastName, email, PhoneNumber, message})
+        });
+
+        if(res.status === 200) {
+            alert('Email sent!');
+        }
+
     }
 
     return(
@@ -67,7 +77,7 @@ export default function Booking() {
                     {/* right side */}
                     <div className="flex flex-col border border-black-700 w-1/2 p-5 rounded shadow-lg">
                         <div className="mapHolder">
-                            <h2 className="text-black text-xl font-semibold italic">My Studio&nbsp;s Location:</h2>
+                            <h2 className="text-black text-xl font-semibold italic">My Studio&apos;s Location:</h2>
                             <Map/>
                         </div>
                         <div>
