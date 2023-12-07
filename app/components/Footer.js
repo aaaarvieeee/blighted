@@ -11,6 +11,7 @@ export default function Footer() {
           <h1 className="text-black font-extrabold text-4xl text-center italic">© blighted 2023</h1>   
         </div>
   
+  
         {/* Additional content (adjust as needed) */}
         <div className="w-1/6">
             <Link className="text-black text-2xl font-extrabold hover:underline italic inline pl-9" href={"https://www.instagram.com/6blighted/"}> 
