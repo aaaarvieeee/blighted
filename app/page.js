@@ -10,12 +10,11 @@ export default function Home() {
         <Layout>
 
           <div className='flex flex-col'>
-            <div className='w-5/6\'>
-              <Image src={Lucifer} className='w-5/6 top-0 right-0 absolute' />
+            <div className='w-full'>
+              <Image src={Lucifer} className='w-full' />
             </div>   
 
             <div>
-              {/* <DesignList/> */}
               <p>
                 
               </p>

@@ -17,6 +17,11 @@ export default function Portfolio() {
                     {/* <Image src={Lucifer} className='w-5/6 top-0 right-0 absolute' /> */}
                 </div>   
 
+                <div className="flex flex-row text-black">
+                    <h1>
+                        under construction ! 🚧
+                    </h1>
+                </div>
                 <div>
                     {/* <DesignList/> */}
                 </div>

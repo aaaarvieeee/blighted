@@ -9,6 +9,12 @@ export default function Design() {
                 <div className="mb-10">
                     <h1 className="text-black text-6xl font-black italic">DESIGNS</h1>
                 </div>
+
+                <div className="flex flex-row text-black">
+                    <h1>
+                        under construction ! 🚧
+                    </h1>
+                </div>
             </div>
         </Layout>
     )
