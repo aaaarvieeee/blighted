@@ -1,19 +1,19 @@
 import * as React from 'react';
 
 interface EmailTemplateProps {
-    firstName: string;
-    lastName: string;
+    first: string;
+    last: string;
     phone: string;
-    message: string; 
+    msg: string; 
   }
 export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
-  firstName, lastName, phone, message
+  first, last, phone, msg
 }) => (
     <div>
-        <p>From: {firstName} {lastName}</p>
+        <p>From: {first} {last}</p>
         <p>Phone Number: {phone}</p>
         <p>
-            {message}
+            {msg}
         </p>
     </div>
 );

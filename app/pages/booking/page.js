@@ -21,6 +21,7 @@ export default function Booking() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     const onSubmit = async (e) => {
+        'use server'
         e.preventDefault();
         if (!emailRegex.test(email)) {
             console.log('invalid email');
