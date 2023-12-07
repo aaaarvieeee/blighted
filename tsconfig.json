@@ -31,7 +31,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
-    "app/pages/api/send.js", ],
+    "app/pages/api/send.ts", ],
   "exclude": [
     "node_modules"
   ]
