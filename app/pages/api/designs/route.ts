@@ -10,7 +10,6 @@ export async function GET() {
     }
     finally {
         await db.$disconnect();
-        return Response.json({ message: "finally, disconnect" });
     }
 }
 
