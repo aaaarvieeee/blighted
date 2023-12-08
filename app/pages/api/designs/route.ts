@@ -6,10 +6,11 @@ export async function GET() {
         return Response.json(designs);
     }
     catch (error) {
-        return error;
+        return Response.json(error);
     }
     finally {
         await db.$disconnect();
+        return Response.json({ message: "finally, disconnect" });
     }
 }
 
