@@ -1,8 +1,10 @@
 "use client";
 import React from 'react';
 import Layout from "../../components/Layout";
+import DesignList from "../../components/DesignList";
 
 export default function Design() {
+
     return(
         <Layout>
             <div className="flex flex-col">
@@ -11,9 +13,7 @@ export default function Design() {
                 </div>
 
                 <div className="flex flex-row text-black">
-                    <h1>
-                        under construction ! 🚧
-                    </h1>
+                    <DesignList />
                 </div>
             </div>
         </Layout>

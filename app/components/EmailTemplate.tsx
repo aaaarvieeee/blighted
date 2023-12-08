@@ -6,7 +6,7 @@ interface EmailTemplateProps {
     phone: string;
     msg: string; 
   }
-export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
+const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
   first, last, phone, msg
 }) => (
     <div>
@@ -17,3 +17,5 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
         </p>
     </div>
 );
+
+export default EmailTemplate;
