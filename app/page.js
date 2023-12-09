@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Layout from './components/Layout'
-import DesignList from './components/DesignList'
 import Lucifer from '../public/Painting-of-Lucifer.jpg'
 
 export default function Home() {
@@ -18,12 +17,6 @@ export default function Home() {
                 Book Now
               </button>
             </div>   
-
-            <div>
-              <p>
-                
-              </p>
-            </div>
           </div>
 
         </Layout>
