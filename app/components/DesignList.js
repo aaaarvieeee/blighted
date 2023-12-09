@@ -49,10 +49,10 @@ export default function DesignList() {
     return(
         <div>
             <div>
-                <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-                    <option value="name">Name</option>
-                    <option value="size">Size</option>
-                </select>
+                <ul value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+                    <li value="name">Name</li>
+                    <li value="size">Size</li>
+                </ul>
             </div>
             <div className="design-list grid grid-cols-4 gap-4 pt-2">
                 {designListUtil.map((design) => (

@@ -4,7 +4,7 @@ import Instagram from "/public/instagram.png";
 
 export default function Footer() {
     return (
-      <div className="flex flex-row w-full p-10 items-center justify-between bg-slate-100">
+      <footer className="flex flex-row w-full p-10 items-center justify-between bg-slate-100">
   
         {/* Logo */}
         <div className="w-100">
@@ -20,6 +20,6 @@ export default function Footer() {
             </Link>
         </div>
   
-      </div>
+      </footer>
     );
   }
