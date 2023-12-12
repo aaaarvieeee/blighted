@@ -49,12 +49,12 @@ export default function DesignList() {
     return(
         <div>
             <div>
-                <ul value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-                    <li value="name">Name</li>
-                    <li value="size">Size</li>
-                </ul>
+                <select className="bg-white rounded-lg border-2 shadow-lg p-2 mb-2" value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+                    <option className="rounded border-2" value="name">Name</option>
+                    <option className="rounded border-2" value="size">Size</option>
+                </select>
             </div>
-            <div className="design-list grid grid-cols-4 gap-4 pt-2">
+            <div className="design-list grid grid-cols-4 gap-4 pt-4">
                 {designListUtil.map((design) => (
                     <div key={design.id}>
                         <DesignCard 

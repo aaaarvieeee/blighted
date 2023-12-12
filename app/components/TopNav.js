@@ -11,16 +11,16 @@ export default function TopNav() {
                 <h1 className="text-white font-extrabold text-2xl text-center italic">blighted</h1>
             </div>
 
-            <div className="nav flex space-x-6 mr-20 ">
+            <div className="nav flex space-x-6 mr-20">
                 <Link className="text-white hover:underline" href="/">home</Link>
                 <Link className="text-white hover:underline" href="/pages/designs">designs</Link>
                 <Link className="text-white hover:underline" href="/pages/booking">booking</Link>
-                <Link className="text-white hover:underline" href="/pages/portfolio">portfolio</Link>
+                {/* <Link className="text-white hover:underline" href="/pages/portfolio">portfolio</Link> */}
                 <Link className="text-white hover:underline" href="/pages/faq">faq</Link>
             </div>
 
             <div className="account">
-                <Image src={User} alt="Account Icon" width={27} height={27} className="invert" />
+                {/* <Image src={User} alt="Account Icon" width={27} height={27} className="invert" /> */}
             </div>
             
         </nav>
