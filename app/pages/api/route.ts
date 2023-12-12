@@ -25,7 +25,7 @@ export async function POST(request) {
       react: EmailTemplate({ first: firstName, last: lastName, phone: PhoneNumber, msg: message }),
     });
 
-    return Response.json({confirmation, data2});
+    return Response.json(confirmation);
   } catch (error) {
     return Response.json({ error });
   }
