@@ -22,10 +22,10 @@ export async function POST(request) {
       from: 'blighted <info@blighted.art>',
       to: "sangalangarvie@gmail.com",
       subject: 'Customer Booking',
-      react: EmailTemplate({ first: firstName, last: lastName, phone: PhoneNumber, msg: message }),
+      react: EmailTemplate({ first: firstName, msg: message }),
     });
 
-    return Response.json(confirmation);
+    return Response.json({confirmation, data2});
   } catch (error) {
     return Response.json({ error });
   }
