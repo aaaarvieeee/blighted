@@ -1,5 +1,6 @@
 import { Resend } from 'resend';
 import EmailTemplate from '../../components/EmailTemplate';
+import EmailConfirmationTemplate from '../../components/EmailConfirmationTemplate';
 
 export async function POST(request) {
   
@@ -9,16 +10,22 @@ export async function POST(request) {
     const body = await request.json();
     console.log(body);
     const { firstName, lastName, PhoneNumber, email, message } = body;
-    const data = await resend.emails.send({
+
+    const confirmation = await resend.emails.send({
       from: 'blighted <info@blighted.art>',
       to: email,
       subject: 'Confirmation Email',
+      react: EmailConfirmationTemplate({ first: firstName, last: lastName}),
+    });
+
+    const data2 = await resend.emails.send({
+      from: 'blighted <info@blighted.art>',
+      to: "sangalangarvie@gmail.com",
+      subject: 'Customer Booking',
       react: EmailTemplate({ first: firstName, last: lastName, phone: PhoneNumber, msg: message }),
     });
-    
 
-
-    return Response.json(data);
+    return Response.json(confirmation);
   } catch (error) {
     return Response.json({ error });
   }

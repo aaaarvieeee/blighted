@@ -13,7 +13,7 @@ export default function Map(){
 
       };
     return (
-        <div className="z-0">
+        <div>
             <LoadScript
             googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}
             >
@@ -21,6 +21,7 @@ export default function Map(){
                 mapContainerStyle={containerStyle}
                 center={center}
                 zoom={15}
+                className="z-0 relative"
                 >
                 <Marker position={center} />
                 { /* Child components, such as markers, info windows, etc. */ }

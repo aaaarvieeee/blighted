@@ -32,7 +32,8 @@
     "**/*.ts",
     "**/*.tsx",
     "app/pages/api/route.ts",
-    "app/components/EmailTemplate.tsx" ],
+    "app/components/EmailTemplate.tsx",
+    "app/components/EmailConfirmationTemplate.tsx", ],
   "exclude": [
     "node_modules"
   ]
